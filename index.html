@@ -1,0 +1,103 @@
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+  <title>日欄チェックツール</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" href="icon.png" sizes="180x180">  
+    <link rel="icon" type="image/png" href="icon.png" sizes="192x192">
+</head>
+<body>	
+    
+
+     <!-- モーダル部分 -->
+  <div class="unit-modal-wrapper" id='signup-modal'>
+    <div class="modal">
+      <div><h2>モード選択</noframes></h2></div>
+      <div id="mode-check" class="mode-btn">入力確認モード</div>
+      <div id="mode-game" class="mode-btn">練習モード</div>
+    </div>
+  </div>
+  <!-- モーダルここまで -->
+
+  <div id='mode-change'>切替</div>
+
+  <div>
+    <div id ='test'></div>
+    <h1 id="title">　</h1>
+
+  </div>
+  <div id='game'>
+    <div id="card">
+      <div id="card-front" class='card-text'>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col" class="table-w">日</th>
+              <th scope="col" class="table-w">１</th>
+              <th scope="col" class="table-w">２</th>
+              <th scope="col" class="table-w">３</th>
+              <th scope="col" class="table-w">４</th>
+              <th scope="col" class="table-w">５</th>
+              <th scope="col" class="table-w">６</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row" id="table-d"><div id="blank">　</div><div id="answer" class="hide"></div></th>
+              <td id="td1" class="tds">　</td>
+              <td id="td2" class="tds">　</td>
+              <td id="td3" class="tds">　</td>
+              <td id="td4" class="tds">　</td>
+              <td id="td5" class="tds">　</td>
+              <td id="td6" class="tds">　</td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="judge">
+          <div id="seikai" class="hide">正解！</div>
+          <div id="batsu" class="hide">不正解</div>
+          <div id="comment" class="hide">↑授業の出欠を入力</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="ans-wrapper">
+      <div id="ans1" class="ans">　</div>
+      <div id="ans2" class="ans">／</div>
+      <div id="ans3" class="ans">×</div>
+      <div id="ans4" class="ans">＋</div>
+      <div id="ans5" class="ans">※</div>
+      <div id="ans6" class="ans">公</div>
+      <div id="ans7" class="ans">止</div>
+      <div id="ans8" class="ans">忌</div>
+      <div id="ans9" class="ans">●</div>
+      <div id="ans10" class="ans">★</div>
+      <div id="ans11" class="ans">消</div>
+      <div id="ans12" class="ans hide">授業無し</div>
+    </div>
+
+    <div id="btn">次の問題</div>
+
+  </div>
+
+    
+  <audio id="sound-file1" preload="auto">
+    <source src="Quiz-Correct_Answer01-1.mp3" type="audio/mp3">
+  </audio>
+
+  <audio id="sound-file2" preload="auto">
+    <source src="Quiz-Wrong_Buzzer01-1.mp3" type="audio/mp3">
+  </audio>
+
+
+<script src="script.js">
+  
+</script>
+    
+</body>
+</html>
