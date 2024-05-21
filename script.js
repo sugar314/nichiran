@@ -80,27 +80,122 @@ $('#mode-game').click(function(){
     function getRandom(){
         var num = Math.random()
         switch(true){
-            case num<0.5:
-                a=0;
-                break;    
-            case num<0.65:
-                a=1;
+            case $('#class-change').text() === '午前部':
+                switch(true){
+                    ////出席
+                    case num<0.6:
+                        a=0;
+                        break;
+                    
+                    ////欠席
+                    case num<0.75:
+                        a=1;
+                        break;
+
+                    ////遅刻
+                    case num<0.85:
+                        a=2;  
+                        break;  
+                    
+                    ////早退
+                    case num<0.90:
+                        a=3;  
+                        break;  
+
+                    ////遅早
+                    case num<0.92:
+                        a=4;  
+                        break;  
+
+                    ////公欠
+                    case num<0.95:
+                        a=5;  
+                        break;  
+                    
+                    ////取消
+                    case num<1:
+                        a=11; 
+                        break;   
+                }
                 break;
-            case num<0.75:
-                a=2;  
-                break;  
-            case num<0.85:
-                a=3;  
-                break;  
-            case num<0.90:
-                a=4;  
-                break;  
-            case num<0.95:
-                a=5;  
-                break;  
-            case num<1:
-                a=11; 
-                break;   
+
+            case $('#class-change').text() === '午後部':
+                switch(true){
+                    ////出席
+                    case num<0.5:
+                        a=0;
+                        break;
+                    
+                    ////欠席
+                    case num<0.7:
+                        a=1;
+                        break;
+
+                    ////遅刻
+                    case num<0.83:
+                        a=2;  
+                        break;  
+                    
+                    ////早退
+                    case num<0.90:
+                        a=3;  
+                        break;  
+
+                    ////遅早
+                    case num<0.92:
+                        a=4;  
+                        break;  
+
+                    ////公欠
+                    case num<0.95:
+                        a=5;  
+                        break;  
+                    
+                    ////取消
+                    case num<1:
+                        a=11; 
+                        break;   
+                }
+                break;
+
+            case $('#class-change').text() === '夜間部':
+                switch(true){
+                    ////出席
+                    case num<0.55:
+                        a=0;
+                        break;
+                    
+                    ////欠席
+                    case num<0.75:
+                        a=1;
+                        break;
+
+                    ////遅刻
+                    case num<0.85:
+                        a=2;  
+                        break;  
+                    
+                    ////早退
+                    case num<0.90:
+                        a=3;  
+                        break;  
+
+                    ////遅早
+                    case num<0.92:
+                        a=4;  
+                        break;  
+
+                    ////公欠
+                    case num<0.95:
+                        a=5;  
+                        break;  
+                    
+                    ////取消
+                    case num<1:
+                        a=11; 
+                        break;   
+                }
+                break;
         }
     }
 
@@ -112,26 +207,123 @@ $('#mode-game').click(function(){
 
         /////１０％の確率で、公止忌消のチャンスを与える
         if(Math.random() > 0.1){
-            for(i = 0 ; i < 6 ; i++){
-                getRandom();
-                sum = sum + a;
-                randoms.push(a);
-                string = string + ansList[a]
-                $(td[i]).text(ansList[a]);
-                switch(a){
-                    case a = 0:
-                    case a = 1:
-                    case a = 2:
-                    case a = 3:
-                    case a = 4:
-                    case a = 5:
-                        $(td[i]).removeClass('shadow');
-                        break;
-                    case a = 11:
-                        $(td[i]).addClass('shadow');
-                        break;
+            if(Math.random() > 0.25){
+                for(i = 0 ; i < 6 ; i++){
+                    getRandom();
+                    sum = sum + a;
+                    randoms.push(a);
+                    string = string + ansList[a]
+                    $(td[i]).text(ansList[a]);
+                    switch(a){
+                        case a = 0:
+                        case a = 1:
+                        case a = 2:
+                        case a = 3:
+                        case a = 4:
+                        case a = 5:
+                            $(td[i]).removeClass('shadow');
+                            break;
+                        case a = 11:
+                            $(td[i]).addClass('shadow');
+                            break;
+                    }
                 }
+            }else{
+                switch(true){
+                    case $('#class-change').text() === '午前部':
+                    for(i = 0 ; i < 4 ; i++){
+                        getRandom();
+                        sum = sum + a;
+                        randoms.push(a);
+                        string = string + ansList[a]
+                        $(td[i]).text(ansList[a]);
+                        switch(a){
+                            case a = 0:
+                            case a = 1:
+                            case a = 2:
+                            case a = 3:
+                            case a = 4:
+                            case a = 5:
+                                $(td[i]).removeClass('shadow');
+                                break;
+                            case a = 11:
+                                $(td[i]).addClass('shadow');
+                                break;
+                        }
+                    }
+                    for(i = 4 ; i < 6 ; i++){
+                        a = 11;
+                        sum = sum + a;
+                        randoms.push(a);
+                        string = string + ansList[a]
+                        $(td[i]).text(ansList[a]);
+                        $(td[i]).addClass('shadow');
+                    }
+                    break;
+
+                case $('#class-change').text() === '午後部':
+                    for(i = 0 ; i < 2 ; i++){
+                        a = 11;
+                        sum = sum + a;
+                        randoms.push(a);
+                        string = string + ansList[a]
+                        $(td[i]).text(ansList[a]);
+                        $(td[i]).addClass('shadow');
+                    }
+                    for(i = 2 ; i < 6 ; i++){
+                        getRandom();
+                        sum = sum + a;
+                        randoms.push(a);
+                        string = string + ansList[a]
+                        $(td[i]).text(ansList[a]);
+                        switch(a){
+                            case a = 0:
+                            case a = 1:
+                            case a = 2:
+                            case a = 3:
+                            case a = 4:
+                            case a = 5:
+                                $(td[i]).removeClass('shadow');
+                                break;
+                            case a = 11:
+                                $(td[i]).addClass('shadow');
+                                break;
+                        }
+                    }
+                    break;
+
+                case $('#class-change').text() === '夜間部':
+                    for(i = 0 ; i < 2 ; i++){
+                        a = 11;
+                        sum = sum + a;
+                        randoms.push(a);
+                        string = string + ansList[a]
+                        $(td[i]).text(ansList[a]);
+                        $(td[i]).addClass('shadow');
+                    }
+                    for(i = 2 ; i < 6 ; i++){
+                        getRandom();
+                        sum = sum + a;
+                        randoms.push(a);
+                        string = string + ansList[a]
+                        $(td[i]).text(ansList[a]);
+                        switch(a){
+                            case a = 0:
+                            case a = 1:
+                            case a = 2:
+                            case a = 3:
+                            case a = 4:
+                            case a = 5:
+                                $(td[i]).removeClass('shadow');
+                                break;
+                            case a = 11:
+                                $(td[i]).addClass('shadow');
+                                break;
+                        }
+                    }
+                    break;       
             }
+        }
         }else{
             b = Math.random()
             switch(true){
@@ -313,4 +505,54 @@ var st
 $('#mode-change').click(function(){
     location.reload();
 })
+
+
+/////部選択
+function morning(){
+    $('#t1').text('1');
+    $('#t2').text('2');
+    $('#t3').text('3');
+    $('#t4').text('4');
+    $('#t5').text('5');
+    $('#t6').text('6');
+    $('#class-change').text('午前部')
+    $('#class-change').removeClass('towilight')
+    $('#class-change').addClass('morning')
+}
+
+function afternoon(){
+    $('#t1').text('3');
+    $('#t2').text('4');
+    $('#t3').text('5');
+    $('#t4').text('6');
+    $('#t5').text('7');
+    $('#t6').text('8');
+    $('#class-change').text('午後部')
+    $('#class-change').removeClass('morning')
+    $('#class-change').addClass('afternoon')
+}
+
+function towilight(){
+    $('#t1').text('7');
+    $('#t2').text('8');
+    $('#t3').text('9');
+    $('#t4').text('10');
+    $('#t5').text('11');
+    $('#t6').text('12');
+    $('#class-change').text('夜間部');
+    $('#class-change').removeClass('afternoon')
+    $('#class-change').addClass('towilight');
+};
+
+$('#class-change').click(function(){
+    if($(this).text() === '午前部'){
+        afternoon();
+    }else if($(this).text() === '午後部'){
+        towilight();
+    }else{
+        morning();
+    }
+});
+
+
 });
