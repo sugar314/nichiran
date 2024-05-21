@@ -31,11 +31,13 @@ th{
   background-color: #8bd3dd;
   line-height: 7vh;
   color: #172c66;
+  width: calc(100% / 7);
 }
 
 td{
   line-height: 13vh;
   background-color: white;
+  width: calc(100% / 7);
 }
 
 
@@ -131,6 +133,41 @@ font-weight: bolder;
   transition: 0.3s;
 }
 
+#class-change {
+  top: 1vh;
+  left: 7.5%;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  font-weight:bolder;
+  }
+
+  .morning {
+    background:#ffb371;
+    box-shadow:0 3px 0 #a88657;
+    color: #ffffff;
+  }
+
+  .afternoon {
+    background:#f59582;
+    box-shadow:0 3px 0 #a86257;
+    color: #ffffff;
+  }
+
+  .towilight {
+    background:#9382f5;
+    box-shadow:0 3px 0 #504688;
+    color: #ffffff;
+  }
+
+#class-change:hover{
+  opacity: 0.8;
+  box-shadow: none;
+  transform: translateY(4px);
+  transition: 0.3s;
+}
+
+
 
 html,body { height:100%; }
 
@@ -222,6 +259,11 @@ box-shadow:0 3px 0 #a85776;
     font-size: 3vh;
     padding: 1vh 3vw;
   }
+
+  #class-change {
+    font-size: 3vh;
+    padding: 1vh 3vw;
+  }
 }
 
 @media (orientation: portrait){
@@ -243,7 +285,7 @@ box-shadow:0 3px 0 #a85776;
     font-size: 2vh;
   }
   th,td{
-    font-size: 3.5vw;
+    font-size: 3vw;
   }
   .mode-btn {
     width: 80%;
@@ -255,8 +297,13 @@ box-shadow:0 3px 0 #a85776;
   #mode-check{
     margin-bottom: 2vh;
   }
-  #mode-change {
 
+  #mode-change {
+    font-size: 2vh;
+    padding: 1vh 2vw;
+  }
+
+  #class-change {
     font-size: 2vh;
     padding: 1vh 2vw;
   }
@@ -282,15 +329,15 @@ box-shadow:0 3px 0 #a85776;
 }
 
 .shadow{
-  background-color: #001858 ;
-  color: #001858;
+  background-color: #414141;
+  color: #414141;
 }
 
 #test{
   margin: 1vh auto;
   width: 80%;
   background-color: #fff;
-  color: #001858;
+  color: #414141;
 }
 
 .correct{
@@ -309,7 +356,7 @@ box-shadow:0 3px 0 #a85776;
 }
 
 #ans12{
-  background-color: #001858;
+  background-color: #414141;
   color: #fff;
 
 }
